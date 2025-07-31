@@ -1,0 +1,367 @@
+/* General Body and Container Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer stays at bottom */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #28a745; /* Green header */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav button {
+    background-color: #fff;
+    color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav button:hover {
+    background-color: #e0e0e0;
+}
+
+nav button.active-nav-btn {
+    background-color: #0056b3; /* Darker blue for active button */
+    color: white;
+    font-weight: bold;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allows main content to expand and push footer down */
+    padding: 20px;
+    display: flex; /* Use flexbox for main to potentially center or organize sections */
+    justify-content: center; /* Center sections horizontally */
+    align-items: flex-start; /* Align sections to the top */
+}
+
+/* Section Styling */
+.app-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 900px; /* Limit section width */
+    margin-bottom: 20px;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for hidden/active */
+}
+
+.app-section.hidden {
+    display: none; /* Hide the section */
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+.app-section.active {
+    display: block; /* Show the section */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.app-section h2 {
+    color: #28a745;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Search and Filter Styling */
+.search-and-filter {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 15px; /* Space between items */
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-and-filter input[type="text"],
+.search-and-filter select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    flex: 1; /* Allows inputs/selects to grow */
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.search-and-filter button {
+    padding: 12px 25px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-and-filter button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Results Container */
+.results-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px dashed #e0e0e0;
+    border-radius: 5px;
+    min-height: 200px; /* Ensure some height even if empty */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow result items to wrap */
+    gap: 20px; /* Space between result items */
+}
+
+.results-container p {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav button {
+        margin: 5px;
+        padding: 8px 15px;
+    }
+
+    .app-section {
+        padding: 20px;
+    }
+
+    .search-and-filter {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: stretch; /* Stretch elements to full width */
+    }
+
+    .search-and-filter input[type="text"],
+    .search-and-filter select,
+    .search-and-filter button {
+        width: 100%;
+        min-width: unset; /* Remove min-width restriction */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Exercise Card Styling */
+.exercise-card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px; /* Fixed width for cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+}
+
+.exercise-card h3 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.exercise-card p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.exercise-card .exercise-gif {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin: 15px 0;
+    background-color: #e9ecef; /* Placeholder background */
+}
+
+.exercise-card .view-details-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.exercise-card .view-details-btn:hover {
+    background-color: #218838;
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top of everything */
+    opacity: 1; /* Initial state before 'hidden' */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh; /* Limit height for scrollability */
+    overflow-y: auto; /* Enable scrolling for long content */
+    transform: translateY(0); /* Initial state before animation */
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.hidden .modal-content {
+    transform: translateY(-20px); /* Move up slightly when hiding */
+}
+
+
+.modal-content h3 {
+    color: #007bff;
+    margin-top: 0;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+.modal-content ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-content ol li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.modal-content .exercise-detail-gif {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures it takes full width and centers if image is smaller */
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.modal-content .close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s ease;
+}
+
+.modal-content .close-button:hover {
+    color: #333;
+}
+
+.modal-content .close-modal-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    background-color: #dc3545; /* Red close button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .close-modal-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive adjustments for cards */
+@media (max-width: 600px) {
+    .exercise-card {
+        width: 100%; /* Make cards full width on very small screens */
+    }
+}

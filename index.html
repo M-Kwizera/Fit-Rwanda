@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Rwanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Fit Rwanda!</h1>
+        <nav>
+            <button id="show-exercises">Exercises</button>
+            <button id="show-nutrition">Nutrition</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="exercise-section" class="app-section active">
+            <h2>Exercise Finder</h2>
+            <div class="search-and-filter">
+                <input type="text" id="exercise-search" placeholder="Search exercises...">
+                <select id="exercise-muscle-filter">
+                    <option value="">All Muscles</option>
+                    </select>
+                <select id="exercise-type-filter">
+                    <option value="">All Types</option>
+                    </select>
+                <button id="search-exercise-btn">Search</button>
+            </div>
+            <div id="exercise-results" class="results-container">
+                <p>Search for exercises above!</p>
+            </div>
+        </section>
+
+        <section id="nutrition-section" class="app-section hidden">
+            <h2>Nutrition Tracker</h2>
+            <div class="search-and-filter">
+                <input type="text" id="nutrition-search" placeholder="Search food items or recipes...">
+                <button id="search-nutrition-btn">Search</button>
+            </div>
+            <div id="nutrition-results" class="results-container">
+                <p>Search for food items or recipes above!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fit Rwanda. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
